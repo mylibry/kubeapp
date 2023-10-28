@@ -26,10 +26,10 @@ spec:
           env:            
             - name: MYSQL_ROOT_PASSWORD
               value: vprodbpass
-          resources:
-            limits:
-              memory: "512Mi"  # Set your preferred memory limit
-              cpu: "0.5"       # Set your preferred CPU limit          
+          #resources:
+          #  limits:
+          #    memory: "512Mi"  # Set your preferred memory limit
+          #    cpu: "0.5"       # Set your preferred CPU limit          
       nodeSelector:
         zone: us-west-2b
       volumes:
