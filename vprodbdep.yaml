@@ -26,16 +26,17 @@ spec:
           env:            
             - name: MYSQL_ROOT_PASSWORD
               value: vprodbpass
-          #resources:
-           #  memory: "512Mi"  # Set your preferred memory limit
-            #  cpu: "0.5"       # Set your preferred CPU limit
+          resources:
+            limits:
+              memory: "512Mi"  # Set your preferred memory limit
+              cpu: "0.5"       # Set your preferred CPU limit          
       nodeSelector:
         zone: us-west-2b
       volumes:
         - name: vpro-db-data
           # This AWS EBS volume must already exist.
           awsElasticBlockStore:
-             volumeID: vol-0d6a03832e697cfd0
+             volumeID: vol-0d5cb78c8866d87ba             
              fsType: ext4
 
       initContainers:
